@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuxw77oj0tuhm"]
+
+[ext_resource type="Script" uid="uid://c2p32vtxgj2et" path="res://scripts/ui/TemptationModal.gd" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://cq0s0t044dnhr" path="res://scripts/ui/UI.gd" id="1_ro3t7"]
+[ext_resource type="Script" uid="uid://bfekwxextk8uw" path="res://scripts/gameplay/TemptationSpawner.gd" id="3_5en4g"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_ro3t7")
+
+[node name="Hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="Label" parent="Hud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Banked" type="Label" parent="Hud"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 42.0
+offset_bottom = 60.0
+
+[node name="Unbanked" type="Label" parent="Hud"]
+layout_mode = 0
+offset_top = 87.0
+offset_right = 40.0
+offset_bottom = 110.0
+
+[node name="BM" type="Label" parent="Hud"]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 40.0
+offset_bottom = 125.0
+
+[node name="Risk" type="ProgressBar" parent="Hud"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 7.0
+offset_right = 181.0
+offset_bottom = 34.0
+
+[node name="TemptationModal" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dj8aq")
+metadata/_custom_type_script = "uid://c2p32vtxgj2et"
+
+[node name="Button" type="Button" parent="TemptationModal"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="TemptationModal"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button3" type="Button" parent="TemptationModal"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TemptationSpawner" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_5en4g")
+modal_path = NodePath("../TemptationModal")

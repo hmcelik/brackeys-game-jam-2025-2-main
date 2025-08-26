@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b644o6i01uaae"]
+
+[ext_resource type="Script" uid="uid://cgla438mct017" path="res://scripts/gameplay/Shrine.gd" id="1_dogoe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0esm0"]
+
+[node name="Shrine" type="Area2D"]
+script = ExtResource("1_dogoe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0esm0")
