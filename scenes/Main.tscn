@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://8r8e2ou6bsg4"]
+
+[ext_resource type="PackedScene" uid="uid://bf4an5gor4ar2" path="res://scenes/Arena.tscn" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://cuxw77oj0tuhm" path="res://scenes/UI.tscn" id="2_0bbpv"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Arena" parent="." instance=ExtResource("1_rvslj")]
+
+[node name="Ui" parent="." instance=ExtResource("2_0bbpv")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 324)

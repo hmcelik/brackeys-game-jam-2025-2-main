@@ -1,29 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf4an5gor4ar2"]
+[gd_scene load_steps=12 format=3 uid="uid://bf4an5gor4ar2"]
 
 [ext_resource type="Script" uid="uid://cwjrivgkrlcm1" path="res://scripts/gameplay/Arena.gd" id="1_4mhah"]
 [ext_resource type="PackedScene" uid="uid://q72pnkga1qoq" path="res://scenes/Player.tscn" id="1_u3rsd"]
 [ext_resource type="PackedScene" uid="uid://b644o6i01uaae" path="res://scenes/Shrine.tscn" id="2_uch3s"]
-[ext_resource type="PackedScene" uid="uid://cuxw77oj0tuhm" path="res://scenes/UI.tscn" id="3_bw14y"]
 [ext_resource type="Script" uid="uid://caf1t751ie8oi" path="res://scripts/gameplay/BulletPool.gd" id="4_bw14y"]
 [ext_resource type="PackedScene" uid="uid://860gdq2fh2qc" path="res://scenes/Bullet.tscn" id="5_4mhah"]
-[ext_resource type="Script" uid="uid://bwc18wv3xdx2l" path="res://scripts/gameplay/PatternController.gd" id="7_gcrh0"]
+[ext_resource type="PackedScene" uid="uid://dpl2p60tg76mj" path="res://scenes/Furnace.tscn" id="6_4mhah"]
+[ext_resource type="Texture2D" uid="uid://d0d7hqjg4u26o" path="res://art/bullets/fireball-32x32.png" id="6_vyqrf"]
+[ext_resource type="PackedScene" uid="uid://ckq13bkgrg2gf" path="res://scenes/Pickup.tscn" id="7_gcrh0"]
+[ext_resource type="Texture2D" uid="uid://c7m5rlsgtgdq0" path="res://art/Player.png" id="7_i77e3"]
+[ext_resource type="Texture2D" uid="uid://bojctmq7ur3ti" path="res://art/furnace-64x64.png" id="7_vyqrf"]
+[ext_resource type="Texture2D" uid="uid://bitjsd73s6g4q" path="res://art/furnace-walking-64x64.png" id="8_i77e3"]
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_4mhah")
 
 [node name="Player" parent="." instance=ExtResource("1_u3rsd")]
-position = Vector2(341, 79)
+position = Vector2(181, 351)
 
 [node name="Shrine" parent="." instance=ExtResource("2_uch3s")]
 position = Vector2(577, 445)
 
-[node name="Ui" parent="." instance=ExtResource("3_bw14y")]
-
 [node name="BulletPool" type="Node" parent="."]
 script = ExtResource("4_bw14y")
 bullet_scene = ExtResource("5_4mhah")
+default_fireball_sprite = ExtResource("6_vyqrf")
+default_laser_sprite = ExtResource("7_i77e3")
 
-[node name="PatternController" type="Node2D" parent="."]
-position = Vector2(580, 317)
-script = ExtResource("7_gcrh0")
+[node name="Furnace" parent="." instance=ExtResource("6_4mhah")]
+position = Vector2(600, 360)
 bullet_pool_path = NodePath("../BulletPool")
+normal_sprite = ExtResource("7_vyqrf")
+mobile_sprite = ExtResource("8_i77e3")
+
+[node name="Pickup" parent="." instance=ExtResource("7_gcrh0")]
+position = Vector2(584, 532)

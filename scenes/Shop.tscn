@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdjja8hlcowng"]
+
+[ext_resource type="Script" uid="uid://o3j4r4f1qvmr" path="res://scripts/ui/ShopSystem.gd" id="1_rgcs7"]
+
+[node name="ShopSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rgcs7")
+
+[node name="ShopPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinsLabel" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Categories" type="HBoxContainer" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemsContainer" type="VBoxContainer" parent="ShopPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Close"

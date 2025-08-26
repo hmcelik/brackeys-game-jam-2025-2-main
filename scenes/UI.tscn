@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuxw77oj0tuhm"]
+[gd_scene load_steps=5 format=3 uid="uid://cuxw77oj0tuhm"]
 
 [ext_resource type="Script" uid="uid://c2p32vtxgj2et" path="res://scripts/ui/TemptationModal.gd" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://cq0s0t044dnhr" path="res://scripts/ui/UI.gd" id="1_ro3t7"]
 [ext_resource type="Script" uid="uid://bfekwxextk8uw" path="res://scripts/gameplay/TemptationSpawner.gd" id="3_5en4g"]
+[ext_resource type="Script" uid="uid://o3j4r4f1qvmr" path="res://scripts/ui/ShopSystem.gd" id="4_ua6yw"]
 
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_ro3t7")
@@ -44,6 +45,22 @@ offset_top = 7.0
 offset_right = 181.0
 offset_bottom = 34.0
 
+[node name="HealthContainer" type="HBoxContainer" parent="Hud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="Hud"]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="ShopButton" type="Button" parent="Hud"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Shop (M)"
+
 [node name="TemptationModal" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -59,10 +76,12 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Button2" type="Button" parent="TemptationModal"]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Button3" type="Button" parent="TemptationModal"]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
@@ -74,3 +93,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_5en4g")
 modal_path = NodePath("../TemptationModal")
+
+[node name="ShopSystem" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_ua6yw")
