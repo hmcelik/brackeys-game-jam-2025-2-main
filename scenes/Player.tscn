@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://jjpume5kg5nj" path="res://art/Player-64x64.png" id="2_v6fml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5q5h1"]
+radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
 radius = 64.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 4
 script = ExtResource("1_p0vlq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,6 +20,8 @@ texture = ExtResource("2_v6fml")
 shape = SubResource("CircleShape2D_5q5h1")
 
 [node name="Magnet" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource("CircleShape2D_p0vlq")

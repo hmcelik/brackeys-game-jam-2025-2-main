@@ -9,29 +9,51 @@ script = ExtResource("1_rgcs7")
 
 [node name="ShopPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_right = 692.0
+offset_bottom = 335.0
 
 [node name="CoinsLabel" type="Label" parent="ShopPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 55.0
+offset_top = 80.0
+offset_right = 95.0
+offset_bottom = 103.0
+text = "Coins: X"
 
 [node name="Categories" type="HBoxContainer" parent="ShopPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 52.0
+offset_top = 6.0
+offset_right = 114.0
+offset_bottom = 35.0
+
+[node name="Upgrades" type="Button" parent="ShopPanel/Categories"]
+layout_mode = 2
+
+[node name="Items" type="Button" parent="ShopPanel/Categories"]
+layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ShopPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 4.0
+offset_top = 34.0
+offset_right = 691.0
+offset_bottom = 334.0
 
 [node name="ItemsContainer" type="VBoxContainer" parent="ShopPanel/ScrollContainer"]
 layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="ShopPanel"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 54.0
+offset_bottom = 35.0
 text = "Close"
+
+[node name="Title" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FURNACE SHOP"

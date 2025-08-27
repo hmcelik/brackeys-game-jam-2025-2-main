@@ -7,7 +7,10 @@
 radius = 8.0
 
 [node name="Bullet" type="Area2D"]
+collision_layer = 8
 script = ExtResource("1_hf8mt")
+fireball_sprite = ExtResource("2_p1sfj")
+fireball_tilt_degrees = -135.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2ropf")

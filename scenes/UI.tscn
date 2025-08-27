@@ -8,95 +8,115 @@
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_ro3t7")
 
-[node name="Hud" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HP" type="Label" parent="Hud"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Banked" type="Label" parent="Hud"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 37.0
-offset_right = 42.0
-offset_bottom = 60.0
-
-[node name="Unbanked" type="Label" parent="Hud"]
-layout_mode = 0
-offset_top = 87.0
-offset_right = 40.0
-offset_bottom = 110.0
-
-[node name="BM" type="Label" parent="Hud"]
-layout_mode = 0
-offset_top = 102.0
-offset_right = 40.0
-offset_bottom = 125.0
-
-[node name="Risk" type="ProgressBar" parent="Hud"]
-layout_mode = 0
-offset_left = 177.0
-offset_top = 7.0
-offset_right = 181.0
-offset_bottom = 34.0
-
-[node name="HealthContainer" type="HBoxContainer" parent="Hud"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HealthBar" type="ProgressBar" parent="Hud"]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
-
-[node name="ShopButton" type="Button" parent="Hud"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Shop (M)"
-
 [node name="TemptationModal" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 888.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 50.0
 script = ExtResource("1_dj8aq")
 metadata/_custom_type_script = "uid://c2p32vtxgj2et"
 
-[node name="Button" type="Button" parent="TemptationModal"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Button2" type="Button" parent="TemptationModal"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Button3" type="Button" parent="TemptationModal"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="TemptationSpawner" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
+offset_top = 93.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 133.0
 script = ExtResource("3_5en4g")
 modal_path = NodePath("../TemptationModal")
 
 [node name="ShopSystem" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 1.0
+offset_top = 218.0
+offset_right = 41.0
+offset_bottom = 258.0
+script = ExtResource("4_ua6yw")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_ua6yw")
+
+[node name="TopBar" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="HealthSection" type="VBoxContainer" parent="MainContainer/TopBar"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="MainContainer/TopBar/HealthSection"]
+layout_mode = 2
+text = "HEALTH"
+
+[node name="HealthBar" type="ProgressBar" parent="MainContainer/TopBar/HealthSection"]
+layout_mode = 2
+
+[node name="HealthHearts" type="HBoxContainer" parent="MainContainer/TopBar/HealthSection"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MainContainer/TopBar"]
+layout_mode = 2
+
+[node name="RiskSection" type="VBoxContainer" parent="MainContainer/TopBar"]
+layout_mode = 2
+
+[node name="RiskLabel" type="Label" parent="MainContainer/TopBar/RiskSection"]
+layout_mode = 2
+text = "RISK TIER"
+
+[node name="RiskBar" type="ProgressBar" parent="MainContainer/TopBar/RiskSection"]
+layout_mode = 2
+
+[node name="CoinSection" type="VBoxContainer" parent="MainContainer/TopBar"]
+layout_mode = 2
+
+[node name="BankedCoins" type="Label" parent="MainContainer/TopBar/CoinSection"]
+layout_mode = 2
+text = "Banked: 0"
+
+[node name="UnbankedCoins" type="Label" parent="MainContainer/TopBar/CoinSection"]
+layout_mode = 2
+text = "At-Risk: 0"
+
+[node name="Multiplier" type="Label" parent="MainContainer/TopBar/CoinSection"]
+layout_mode = 2
+text = "BM x1.0"
+
+[node name="GameArea" type="Control" parent="MainContainer"]
+layout_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="StatusSection" type="VBoxContainer" parent="MainContainer/BottomBar"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="MainContainer/BottomBar/StatusSection"]
+layout_mode = 2
+text = "Status"
+
+[node name="StatusText" type="Label" parent="MainContainer/BottomBar/StatusSection"]
+layout_mode = 2
+text = "Normal"
+
+[node name="ControlSection" type="VBoxContainer" parent="MainContainer/BottomBar"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainContainer/BottomBar/ControlSection"]
+layout_mode = 2
+text = "Shop (M)"
+
+[node name="ControlsHelp" type="Label" parent="MainContainer/BottomBar/ControlSection"]
+layout_mode = 2
+text = "WASD: Move | Space: Dash | E: Cashout"
+
+[node name="DamageOverlay" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamageIndicator" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "DAMAGE!"

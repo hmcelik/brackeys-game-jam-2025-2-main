@@ -9,5 +9,5 @@
 
 [node name="Ui" parent="." instance=ExtResource("2_0bbpv")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
 position = Vector2(578, 324)
